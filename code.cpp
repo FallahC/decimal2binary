@@ -1,11 +1,13 @@
 #include <iostream>
 #include <cmath>
 
+using namespace std;
+
 int a, b, c, answer_power, input, initial;
 
 int main(){
-std::cout << "Please input your decimal number to convert it into binary. ";
-std::cin >> input;
+cout << "Please input your decimal number to convert it into binary. ";
+cin >> input;
 initial = input;
 c = 0;
     while (input > 0){                /*This loop is to find the highest power of 2 that fits the input.*/
@@ -24,14 +26,14 @@ c = 0;
 
     while (c >= 0){                   /*This loop is to do the actual conversion. It will input 1 when the next greatest power of 2 fits the remainder and 0 if it doesn't.*/
         if (a - b >= 0){              /*Input 1 when the tested power of 2 fits the remainder.*/
-            std::cout << "1" << std::endl;
+            cout << "1" << endl;
             a = a - b;                /*a is set as the remainder value after suastracting with the current tested power of 2.*/
             c = c - 1;                /*The power of 2 that will be tested next is reduced by 1.*/
             b = pow(2,c);             /*b is set as the value of the reduced power of 2.*/
             
         }
         else if (a - b < 0){          /*Input 0 when the tested power of 2 is bigger than the remainder.*/
-            std::cout << "0" << std::endl;
+            cout << "0" << endl;
             c = c -1;                 /*The power of 2 that will be tested next is reduced by 1.*/
             b = pow(2,c);             /*b is set as the value of the reduced power of 2.*/
         }
