@@ -14,7 +14,7 @@ c = 0;
         if (input % 2 == 0){
             input = input / pow(2,1);
             answer_power = initial - pow(2,c);
-            c = c + 1;
+            c += 1;
         }    
         else {
             input = input - 1;
